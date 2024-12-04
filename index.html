@@ -3,135 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veil ARG</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-        :root {
-            --black: #000000;
-            --white: #ffffff;
-            --red: #ff003c;
-            --blue: #006eff;
-            --background-gradient: linear-gradient(135deg, #000000, #202020, #000000);
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Press Start 2P', monospace;
-            color: var(--white);
-            background: var(--background-gradient);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        h1, h2 {
-            text-transform: uppercase;
-            text-shadow: 2px 2px 5px var(--red), -2px -2px 5px var(--blue);
-        }
-
-        .vhs {
-            position: relative;
-            animation: flicker 2s infinite;
-        }
-
-        @keyframes flicker {
-            0%, 49%, 100% { opacity: 1; }
-            50% { opacity: 0.9; }
-        }
-
-        .glitch {
-            color: var(--red);
-            text-shadow: 2px 2px var(--blue), -2px -2px var(--red);
-            position: relative;
-        }
-
-        .glitch::before, .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--black);
-            overflow: hidden;
-            clip-path: inset(0 0 50% 0);
-            animation: glitch-animation 1.5s infinite;
-        }
-
-        .glitch::before {
-            text-shadow: 2px 2px var(--red);
-            animation-delay: -0.2s;
-        }
-
-        .glitch::after {
-            text-shadow: -2px -2px var(--blue);
-            animation-delay: -0.1s;
-        }
-
-        @keyframes glitch-animation {
-            0% { clip-path: inset(20% 0 50% 0); transform: translate(-10px, -10px); }
-            50% { clip-path: inset(50% 0 20% 0); transform: translate(10px, 10px); }
-            100% { clip-path: inset(20% 0 50% 0); transform: translate(-10px, -10px); }
-        }
-
-        .interactive-area {
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        button {
-            background: var(--red);
-            color: var(--white);
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(255, 0, 60, 0.75);
-        }
-
-        button:hover {
-            background: var(--blue);
-            box-shadow: 0 4px 15px rgba(0, 110, 255, 0.75);
-        }
-
-        .content-area {
-            display: none;
-            margin-top: 20px;
-            animation: fade-in 1s ease-in-out;
-        }
-
-        @keyframes fade-in {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-    </style>
+    <title>VEIL - ERROR://SIGNAL_CORRUPTED</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
-    <div class="vhs">
-        <h1 class="glitch" data-text="Veil">Veil</h1>
-        <h2 class="glitch" data-text="Can You Save the World?">Can You Save the World?</h2>
-    </div>
+<body class="vhs-effect">
+    <!-- Main container with VHS overlay -->
+    <div class="vhs-overlay"></div>
+    
+    <!-- Main content wrapper -->
+    <main class="content-wrapper">
+        <!-- Header/Logo section -->
+        <header class="glitch-header">
+            <h1 class="glitch" data-text="VEIL">VEIL</h1>
+            <p class="subtitle">SYSTEM://ACCESSING_SECURE_TERMINAL</p>
+        </header>
 
-    <div class="interactive-area">
-        <button id="start-btn">Start</button>
-        <div id="content" class="content-area">
-            <p>The journey begins. The scientist group Luminyce needs your help to uncover the secrets of Veil before it's too late. Solve puzzles and uncover the truth.</p>
-        </div>
-    </div>
+        <!-- Terminal section -->
+        <section class="terminal">
+            <div class="terminal-content">
+                <p class="typing-effect">WARNING: Unauthorized access detected...</p>
+                <p class="typing-effect">LUMINYCE LABORATORIES - CLASSIFIED TERMINAL</p>
+                <p class="typing-effect">Enter command: <span class="cursor">_</span></p>
+            </div>
+        </section>
 
-    <script>
-        const button = document.getElementById('start-btn');
-        const content = document.getElementById('content');
+        <!-- Hidden content sections (revealed through puzzle progression) -->
+        <section class="hidden-content" id="section-1">
+            <!-- Content will be revealed as puzzles are solved -->
+        </section>
+    </main>
 
-        button.addEventListener('click', () => {
-            button.style.display = 'none';
-            content.style.display = 'block';
-        });
-    </script>
+    <script src="js/vhs-effects.js"></script>
+    <script src="js/terminal.js"></script>
 </body>
-</html>
+</html> 
