@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEIL - Internal Access</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/vhs.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/terminal.css">
+</head>
+<body>
+    <div class="vhs-effect">
+        <div class="scanlines"></div>
+        <div class="noise"></div>
+        <div class="content terminal-content">
+            <div class="video-container">
+                <!-- Add your video here -->
+                <video id="promo-video" autoplay>
+                    <source src="assets/video/enlightenment-promo.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="audio-player">
+                <div class="player-label glitch-text">EMPLOYEE BRIEFING</div>
+                <audio id="briefing" class="styled-player">
+                    <!-- Add your audio file here -->
+                    <source src="assets/audio/employee-briefing.mp3" type="audio/mpeg">
+                </audio>
+                <div class="player-controls">
+                    <button class="play-button">▶</button>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="time-display">00:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/effects/vhs.js"></script>
+    <script src="js/effects/glitch.js"></script>
+    <script src="js/terminal.js"></script>
+</body>
+</html> 
